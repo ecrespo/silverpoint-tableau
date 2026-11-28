@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest manifest-version="0.1" xmlns="http://www.tableau.com/xml/extension_manifest">
+  <worksheet-extension id="to.seraph.silverpoint.interval-chart" extension-version="0.1.0">
+    <default-locale>en_US</default-locale>
+    <name resource-id="name"/>
+    <description>Floating bars from start to end on lanes.</description>
+    <author name="Ernesto Crespo" email="ecrespo@gmail.com" organization="silverpoint" website="https://github.com/ecrespo/silverpoint-tableau"/>
+    <min-api-version>1.12</min-api-version>
+    <source-location>
+      <url>https://ecrespo.github.io/silverpoint-tableau/v0.1/index.html?chart=interval-chart</url>
+    </source-location>
+    <icon/>
+    <encoding id="lane">
+      <display-name>Lane</display-name>
+      <data-spec>
+        <data-type>string</data-type>
+      </data-spec>
+      <role-spec>
+        <role-type>discrete-dimension</role-type>
+      </role-spec>
+      <fields max-count="1"/>
+      <tooltip>Lane: one field</tooltip>
+    </encoding>
+    <encoding id="start">
+      <display-name>Start</display-name>
+      <data-spec>
+        <data-type>numeric</data-type>
+      </data-spec>
+      <role-spec>
+        <role-type>continuous-measure</role-type>
+        <role-type>discrete-measure</role-type>
+      </role-spec>
+      <fields max-count="1"/>
+      <tooltip>Start: one field</tooltip>
+    </encoding>
+    <encoding id="end">
+      <display-name>End</display-name>
+      <data-spec>
+        <data-type>numeric</data-type>
+      </data-spec>
+      <role-spec>
+        <role-type>continuous-measure</role-type>
+        <role-type>discrete-measure</role-type>
+      </role-spec>
+      <fields max-count="1"/>
+      <tooltip>End: one field</tooltip>
+    </encoding>
+    <encoding id="label">
+      <display-name>Label</display-name>
+      <data-spec>
+        <data-type>string</data-type>
+      </data-spec>
+      <role-spec>
+        <role-type>discrete-dimension</role-type>
+      </role-spec>
+      <fields max-count="1"/>
+      <tooltip>Label: one field (optional)</tooltip>
+    </encoding>
+  </worksheet-extension>
+  <resources>
+    <resource id="name">
+      <text locale="en_US">Silverpoint Interval chart</text>
+    </resource>
+  </resources>
+</manifest>

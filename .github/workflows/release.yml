@@ -1,0 +1,41 @@
+# TAB-REQ-009, TAB-Art. 2: a tag vX.Y.Z deploys the build under /silverpoint-tableau/vX.Y/ on GitHub
+# Pages, keeping every other release's folder, and attaches the .trex files to the GitHub release.
+name: release
+
+on:
+  push:
+    tags: ['v*.*.*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - name: The tag is the package version
+        run: test "v$(node -p "require('./package.json').version")" = "$GITHUB_REF_NAME"
+      - run: npm ci
+      - run: npm run check
+      - run: npm test
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm run e2e
+      - id: line
+        run: echo "path=v$(node -p "require('./package.json').version.split('.').slice(0,2).join('.')")" >> "$GITHUB_OUTPUT"
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dist
+          destination_dir: ${{ steps.line.outputs.path }}
+          keep_files: true
+      - name: One zip with every manifest
+        run: cd trex && zip -q "../silverpoint-tableau-trex-${GITHUB_REF_NAME#v}.zip" *.trex
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" trex/*.trex "silverpoint-tableau-trex-${GITHUB_REF_NAME#v}.zip" --title "$GITHUB_REF_NAME" --notes "Viz extensions for silverpoint $(node -p "require('./package.json').silverpoint.line"), served from https://ecrespo.github.io/silverpoint-tableau/${{ steps.line.outputs.path }}/."

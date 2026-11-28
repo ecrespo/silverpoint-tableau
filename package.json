@@ -1,0 +1,30 @@
+{
+  "name": "silverpoint-tableau",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Tableau viz extensions that draw silverpoint charts on the Marks card.",
+  "license": "MIT",
+  "type": "module",
+  "silverpoint": {
+    "line": "0.10",
+    "engine": "0.10.1"
+  },
+  "scripts": {
+    "vendor": "node scripts/vendor.mjs",
+    "generate": "node scripts/make-trex.ts",
+    "check": "node scripts/make-trex.ts --check && node scripts/vendor.mjs --check",
+    "build": "node scripts/prepare-public.mjs && tsc --noEmit && vite build",
+    "preview": "vite preview --port 4317 --strictPort",
+    "test": "vitest run",
+    "e2e": "playwright test",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "@playwright/test": "1.63.0",
+    "@types/node": "^22.20.5",
+    "typescript": "5.9.2",
+    "vite": "^8.3.0",
+    "vitest": "^3.2.0"
+  }
+}
