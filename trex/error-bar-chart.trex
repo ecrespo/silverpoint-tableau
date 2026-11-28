@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest manifest-version="0.1" xmlns="http://www.tableau.com/xml/extension_manifest">
+  <worksheet-extension id="to.seraph.silverpoint.error-bar-chart" extension-version="0.1.0">
+    <default-locale>en_US</default-locale>
+    <name resource-id="name"/>
+    <description>A point estimate with its interval per category.</description>
+    <author name="Ernesto Crespo" email="ecrespo@gmail.com" organization="silverpoint" website="https://github.com/ecrespo/silverpoint-tableau"/>
+    <min-api-version>1.12</min-api-version>
+    <source-location>
+      <url>https://ecrespo.github.io/silverpoint-tableau/v0.1/index.html?chart=error-bar-chart</url>
+    </source-location>
+    <icon/>
+    <encoding id="label">
+      <display-name>Label</display-name>
+      <data-spec>
+        <data-type>string</data-type>
+      </data-spec>
+      <role-spec>
+        <role-type>discrete-dimension</role-type>
+      </role-spec>
+      <fields max-count="1"/>
+      <tooltip>Label: one field</tooltip>
+    </encoding>
+    <encoding id="estimate">
+      <display-name>Estimate</display-name>
+      <data-spec>
+        <data-type>numeric</data-type>
+      </data-spec>
+      <role-spec>
+        <role-type>continuous-measure</role-type>
+        <role-type>discrete-measure</role-type>
+      </role-spec>
+      <fields max-count="1"/>
+      <tooltip>Estimate: one field</tooltip>
+    </encoding>
+    <encoding id="low">
+      <display-name>Low</display-name>
+      <data-spec>
+        <data-type>numeric</data-type>
+      </data-spec>
+      <role-spec>
+        <role-type>continuous-measure</role-type>
+        <role-type>discrete-measure</role-type>
+      </role-spec>
+      <fields max-count="1"/>
+      <tooltip>Low: one field</tooltip>
+    </encoding>
+    <encoding id="high">
+      <display-name>High</display-name>
+      <data-spec>
+        <data-type>numeric</data-type>
+      </data-spec>
+      <role-spec>
+        <role-type>continuous-measure</role-type>
+        <role-type>discrete-measure</role-type>
+      </role-spec>
+      <fields max-count="1"/>
+      <tooltip>High: one field</tooltip>
+    </encoding>
+  </worksheet-extension>
+  <resources>
+    <resource id="name">
+      <text locale="en_US">Silverpoint Error bar chart</text>
+    </resource>
+  </resources>
+</manifest>

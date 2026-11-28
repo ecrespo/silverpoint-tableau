@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest manifest-version="0.1" xmlns="http://www.tableau.com/xml/extension_manifest">
+  <worksheet-extension id="to.seraph.silverpoint.heatmap-chart" extension-version="0.1.0">
+    <default-locale>en_US</default-locale>
+    <name resource-id="name"/>
+    <description>Labelled rows of values, normalised against `scaleMax`.</description>
+    <author name="Ernesto Crespo" email="ecrespo@gmail.com" organization="silverpoint" website="https://github.com/ecrespo/silverpoint-tableau"/>
+    <min-api-version>1.12</min-api-version>
+    <source-location>
+      <url>https://ecrespo.github.io/silverpoint-tableau/v0.1/index.html?chart=heatmap-chart</url>
+    </source-location>
+    <icon/>
+    <encoding id="row">
+      <display-name>Row</display-name>
+      <data-spec>
+        <data-type>string</data-type>
+      </data-spec>
+      <role-spec>
+        <role-type>discrete-dimension</role-type>
+      </role-spec>
+      <fields max-count="1"/>
+      <tooltip>Row: one field</tooltip>
+    </encoding>
+    <encoding id="column">
+      <display-name>Column</display-name>
+      <data-spec>
+        <data-type>string</data-type>
+      </data-spec>
+      <role-spec>
+        <role-type>discrete-dimension</role-type>
+      </role-spec>
+      <fields max-count="1"/>
+      <tooltip>Column: one field</tooltip>
+    </encoding>
+    <encoding id="value">
+      <display-name>Value</display-name>
+      <data-spec>
+        <data-type>numeric</data-type>
+      </data-spec>
+      <role-spec>
+        <role-type>continuous-measure</role-type>
+        <role-type>discrete-measure</role-type>
+      </role-spec>
+      <fields max-count="1"/>
+      <tooltip>Value: one field</tooltip>
+    </encoding>
+  </worksheet-extension>
+  <resources>
+    <resource id="name">
+      <text locale="en_US">Silverpoint Heatmap chart</text>
+    </resource>
+  </resources>
+</manifest>

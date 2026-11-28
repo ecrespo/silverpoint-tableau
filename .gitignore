@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Build output; public/ is filled from vendor/ by scripts/prepare-public.mjs on every build
+dist/
+public/
+
+# Playwright and Vitest reports
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+coverage/
+
+# Tooling caches and local indexes
+.vite/
+*.tsbuildinfo
+.codegraph/
+graphify-out/
+
+# Editors and OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Logs and local environment
+*.log
+npm-debug.log*
+.env
+.env.*
