@@ -11,7 +11,7 @@
 - [x] **TAB-T-05** The configuration dialog and settings. *TAB-REQ-005*
 - [x] **TAB-T-06** Mark selection. *TAB-REQ-007*
 - [x] **TAB-T-07** The mock of the Extensions API, keyboard and request-log tests, the kit. *TAB-REQ-010, H-4, H-5, TAB-Art. 1*
-- [ ] **TAB-T-08** README for authors and administrators; release `0.1.0`. *TAB-REQ-009*
+- [x] **TAB-T-08** README for authors and administrators; release `0.1.0`. *TAB-REQ-009*
 
 ## Open questions
 
@@ -52,7 +52,7 @@ TAB-REQ-006; disabling the selection call fails TAB-REQ-007.
 
 - TAB-T-02's Desktop half: load a `.trex` in Tableau Desktop 2024.2+ and run the behaviours of
   `specs/poc.md`; TAB-OQ-2 (Tableau Public).
-- TAB-T-08's release: tag `v0.1.0` (GitHub Pages must be enabled on the `gh-pages` branch first).
+- TAB-T-08: `v0.1.0` released 2026-11-28 (55 `.trex` and their zip on the GitHub release, build on `gh-pages` `/v0.1/`); GitHub Pages still to be enabled on `gh-pages`.
 
 
 ### Validation (2026-11-28)

@@ -25,7 +25,8 @@ in `specs/poc.md`). Validated 2026-11-28: `check` (55 manifests, vendor ok), `ty
 Open, and not doable from this repo alone:
 - TAB-T-02's Desktop half: load a `.trex` in Tableau Desktop 2024.2+ and run `specs/poc.md`'s behaviours
   (resize, settings persistence, Format Extension, selection); TAB-OQ-2 (Tableau Public).
-- TAB-T-08's release: enable GitHub Pages on `gh-pages`, then tag `v0.1.0` (`release.yml`).
+- TAB-T-08: `v0.1.0` released 2026-11-28 (release with 55 `.trex` and a zip; build pushed to `gh-pages`
+  `/v0.1/`). GitHub Pages must still be enabled on `gh-pages` (Settings → Pages) for the URL to serve.
 
 Commands: `npm run check` (manifests and vendored engine current), `npm run typecheck`, `npm test`
 (Vitest, `test/*.test.ts` only — `vitest.config.ts`), `npm run build` (copies `vendor/` scripts into
